@@ -27,11 +27,13 @@ jobs:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
           channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
 
-      - uses: futureware-tech/simulator-action@f6578e3385c735885cf408020b6fb455721dc57b
+      - uses: nilsreichardt/simulator-action@baf55bd5caecbab5f732ffb8c37d9e4855f7e075
         id: simulator
         with:
           wait_for_boot: true
           model: "iPhone 17"
+          boot_retries: "3"
+          boot_timeout_seconds: "300"
 
       - name: Run integration tests
         env:
