@@ -30,6 +30,7 @@ jobs:
       - uses: futureware-tech/simulator-action@f6578e3385c735885cf408020b6fb455721dc57b
         id: simulator
         with:
+          wait_for_boot: true
           model: "iPhone 17"
 
       - name: Run integration tests
