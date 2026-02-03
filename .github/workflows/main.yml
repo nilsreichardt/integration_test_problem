@@ -35,6 +35,12 @@ jobs:
       - name: Run integration tests
         env:
           SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        # We use --ignore-timeouts to avoid the 12 minute timeout during the
+        # build. Flutter has a timeout of 12 minutes for the build, but building
+        # our iOS app takes longer. Using --ignore-timeouts is the current
+        # recommended workaround, see
+        # https://github.com/flutter/flutter/issues/105913#issuecomment-2770877374
         run: |
           flutter test integration_test/app_test.dart \
-            -d $SIMULATOR_UDID
+            -d $SIMULATOR_UDID \
+            --ignore-timeouts
