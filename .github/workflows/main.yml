@@ -44,4 +44,5 @@ jobs:
         run: |
           flutter test integration_test/app_test.dart \
             -d $SIMULATOR_UDID \
-            --ignore-timeouts
+            --ignore-timeouts \
+            --verbose
