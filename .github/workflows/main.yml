@@ -12,9 +12,9 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-            # 100 runs
+            # 20 runs
             parameter1: [1,2,3,4,5,6,7,8,9,10]
-            parameter2: [1,2,3,4,5,6,7,8,9,10]
+            parameter2: [1,2]
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
 
