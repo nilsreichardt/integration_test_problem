@@ -27,7 +27,7 @@ jobs:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
           channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
 
-      - uses: nilsreichardt/simulator-action@f1328cc00d4a1ad8748ded4f17ef334b99cb6bb9
+      - uses: nilsreichardt/simulator-action@a7ad1bffe28e5354a2bce14fd9fe2ad125fc99bf
         id: simulator
         with:
           wait_for_boot: true
